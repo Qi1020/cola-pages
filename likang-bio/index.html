@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#043a84">
+<title>上海利康生物高科技有限公司 · 感染控制近四十年</title>
+<meta name="description" content="上海利康生物高科技有限公司，核心团队来自原第二军医大学，自 1988 年起专注感染控制。四大品牌五十余款产品，覆盖手卫生、皮肤黏膜消毒、医疗器械清洗消毒与环境物表消毒。">
+<style>/* 上海利康生物高科技有限公司 · 官网/招聘页 */
+:root{
+  --navy:#043a84;
+  --navy-d:#032a5f;
+  --ink:#16202e;
+  --muted:#5d6a7b;
+  --line:#e3e7ee;
+  --paper:#ffffff;
+  --sand:#f6f4ef;
+  --gold:#96763c;
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  --pad:clamp(20px,5vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:.01em}
+p{margin:0}
+::selection{background:#cfe0f7}
+
+/* ---------- 导航 ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1240px;margin:0 auto;padding:0 var(--pad);height:64px;position:relative;
+  display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15.5px;letter-spacing:.02em;flex:none}
+.brand img{height:26px;width:auto}
+.links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{padding:8px 13px;border-radius:999px;font-size:14px;color:#3d4a5c;white-space:nowrap;
+  transition:background .18s,color .18s}
+.links a:hover{background:var(--sand);color:var(--navy)}
+.links a.on{color:var(--navy);font-weight:600;background:#eef3fb}
+.nav-cta{flex:none;padding:9px 18px;border-radius:999px;background:var(--navy);color:#fff;
+  font-size:13.5px;font-weight:600;letter-spacing:.02em}
+.nav-cta:hover{background:var(--navy-d)}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(180deg,#f8f7f3 0%,#fff 62%);border-bottom:1px solid var(--line)}
+.hero-in{max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,88px) var(--pad) clamp(28px,4vw,44px);
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
+.kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.4vw,52px);line-height:1.22;
+  letter-spacing:.01em;margin-top:18px;color:#101a28}
+.hero h1 em{font-style:normal;color:var(--navy)}
+.hero-sub{margin-top:20px;color:var(--muted);font-size:clamp(14.5px,1.15vw,16.5px);line-height:1.85;max-width:33em}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.hero-tags span{font-size:12.5px;color:var(--navy);background:#eef3fb;border-radius:6px;padding:5px 10px;letter-spacing:.02em}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+  font-size:14px;font-weight:600;transition:transform .2s,background .2s,box-shadow .2s}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(4,58,132,.18)}
+.btn-primary:hover{background:var(--navy-d);transform:translateY(-1px)}
+.btn-ghost{border:1px solid #cfd7e3;color:#25313f}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.hero-visual{position:relative}
+.hero-main{border-radius:16px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 46px rgba(15,30,60,.14)}
+.hero-main img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero-side{position:absolute;right:-6px;bottom:-26px;width:44%;aspect-ratio:1/1;border-radius:14px;
+  overflow:hidden;border:6px solid #fff;box-shadow:0 14px 34px rgba(15,30,60,.16);display:none}
+.hero-side img{width:100%;height:100%;object-fit:cover}
+
+.stats{max-width:1240px;margin:0 auto;padding:0 var(--pad) clamp(32px,4vw,46px);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats li{list-style:none;background:#fff;padding:22px clamp(12px,2vw,26px)}
+.stats b{display:block;font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);color:var(--navy);line-height:1.1}
+.stats i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.04em;margin-top:8px}
+.stats{padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- 通用章节 ---------- */
+.sec{padding:clamp(52px,7vw,96px) 0}
+.sec-in{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+.sec.alt{background:var(--sand)}
+.sec.dark{background:var(--navy);color:#fff}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-bottom:clamp(24px,3vw,40px)}
+.num{font-family:var(--serif);font-size:13px;color:var(--gold);letter-spacing:.1em;padding-top:10px;border-top:1px solid currentColor;min-width:34px}
+.sec h2{font-family:var(--serif);font-size:clamp(23px,2.6vw,32px);line-height:1.35;letter-spacing:.01em}
+.sec h2 span{font-family:var(--sans);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:#9aa6b6;margin-left:12px;font-weight:500;vertical-align:middle}
+.lede{margin-top:12px;color:var(--muted);font-size:15px;max-width:46em}
+.sec.dark .lede{color:#c8d8ef}
+.sec.dark .num{color:#8fb0dd}
+
+/* ---------- 关于我们 ---------- */
+.prose{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,52px);align-items:start}
+.prose p{color:#39465a;font-size:15.5px;line-height:1.95}
+.prose p+p{margin-top:16px}
+.motto{border-left:2px solid var(--gold);padding:4px 0 4px 20px}
+.motto .cn{font-family:var(--serif);font-size:19px;letter-spacing:.28em;color:var(--navy);line-height:2}
+.motto .en{font-size:11.5px;letter-spacing:.2em;color:var(--muted);margin-top:10px;text-transform:uppercase}
+.motto .note{font-size:13px;color:#7d8b9c;margin-top:14px;line-height:1.95}
+.shots{margin-top:clamp(24px,3vw,36px);display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
+.shots figure{margin:0;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center}
+.shots img{width:100%;height:100%;object-fit:contain}
+
+/* ---------- 技术卡 ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card{background:#fff;padding:clamp(20px,2.4vw,30px)}
+.card h4{font-size:15px;color:var(--navy);margin-bottom:10px;letter-spacing:.01em}
+.card p{font-size:13.8px;color:#4b586a;line-height:1.8}
+.card .k{font-family:var(--serif);font-size:26px;color:#c8d3e4;line-height:1;margin-bottom:14px;display:block}
+.cert-row{margin-top:20px}.cert-row .cert-list{margin-top:0}
+.cert-row figure{margin:0;width:clamp(180px,26vw,300px);border-radius:10px;overflow:hidden;
+  border:1px solid var(--line);background:#fff;box-shadow:0 6px 18px rgba(20,35,60,.07)}
+.cert-row figcaption{font-size:12px;color:#8b98a8;margin-top:8px;text-align:center}
+.cert-list{display:flex;flex-wrap:wrap;gap:10px 8px}
+.cert-list span{font-size:12.5px;color:#3d4a5c;border:1px solid var(--line);background:#fff;
+  border-radius:6px;padding:6px 11px}
+
+/* ---------- 品牌矩阵 ---------- */
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2vw,26px);background:#fff;
+  display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
+.bcard:hover{border-color:#c3d3ea;transform:translateY(-2px);box-shadow:0 12px 26px rgba(20,35,60,.08)}
+.bcard .en{font-size:10.5px;letter-spacing:.16em;color:#9aa6b6;text-transform:uppercase}
+.bcard h4{font-family:var(--serif);font-size:21px;color:var(--navy);margin:8px 0 4px}
+.bcard .cnt{font-size:12px;color:var(--gold);letter-spacing:.04em}
+.bcard p{font-size:13.5px;color:#4b586a;line-height:1.8;margin-top:12px}
+.bcard ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.bcard li{font-size:12.5px;color:#46536a;background:var(--sand);border-radius:4px;padding:4px 9px}
+
+/* ---------- 产品线 ---------- */
+.pblock{padding:clamp(30px,4vw,52px) 0;border-top:1px solid var(--line)}
+.pblock:first-of-type{border-top:0;padding-top:0}
+.pblock:last-of-type{padding-bottom:0}
+.phead{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:6px}
+.phead h3{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);color:#101a28}
+.phead .tag{font-size:11.5px;letter-spacing:.12em;color:#fff;background:var(--navy);
+  border-radius:4px;padding:3px 9px;text-transform:uppercase}
+.phead .n{font-size:12.5px;color:var(--gold);letter-spacing:.04em}
+.pdesc{color:var(--muted);font-size:14.8px;max-width:52em;margin-bottom:22px}
+.ptwo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+.phead+.ptwo{margin-top:22px}
+.points{margin:0;padding:0;list-style:none}
+.points li{position:relative;padding-left:0;padding-bottom:16px}
+.points b{display:block;font-size:14.5px;color:#1d2a3a;font-weight:600;margin-bottom:3px}
+.points span{display:block;font-size:13.5px;color:#4b586a;line-height:1.8}
+.points li::before{content:"";position:absolute;left:-14px;top:9px;width:5px;height:5px;border-radius:50%;background:#c8b48a}
+.wall{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end}
+.wall figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;
+  aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:6px;overflow:hidden}
+.wall img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.wide-imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:22px}
+.wide-imgs figure{margin:0;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;padding:8px 8px 0}
+.wide-imgs img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain}
+.wide-imgs figcaption{font-size:11.5px;color:#8b98a8;padding:4px 2px 9px;line-height:1.5;text-align:center}
+.chips{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.chips li{font-size:12px;color:#3d4a5c;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:#fff}
+
+/* ---------- 应用场景 ---------- */
+.uses{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.use{border-radius:14px;padding:clamp(18px,2vw,26px);background:#fff;border:1px solid var(--line)}
+.use h4{font-size:15px;color:var(--navy);margin-bottom:8px}
+.use p{font-size:13.3px;color:#4b586a;line-height:1.8}
+.use .n{font-family:var(--serif);font-size:12px;color:#b6c2d3;letter-spacing:.1em;display:block;margin-bottom:10px}
+
+/* ---------- 加入我们 ---------- */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.join h3{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);line-height:1.45;margin-bottom:14px}
+.join p{color:#c8d8ef;font-size:14.8px;line-height:1.95}
+.join .list{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.join .list li{border-left:2px solid rgba(255,255,255,.28);padding-left:16px;padding-bottom:2px}
+.join .list b{display:block;font-size:14.5px;color:#fff;margin-bottom:6px}
+.join .list span{font-size:13.3px;color:#b9cbe4;line-height:1.8}
+.join-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.join-cta .btn{background:#fff;color:var(--navy)}
+.join-cta .btn:hover{background:#eaf1fb}
+.join-foot{margin-top:26px;font-size:13.5px;line-height:1.9;color:#b9cbe4;max-width:34em}
+.join-foot b{color:#fff}
+
+.endcard{text-align:center}
+.endcard .sec-in{padding-top:clamp(10px,2vw,24px);padding-bottom:clamp(10px,2vw,24px)}
+.endcard h2{font-family:var(--serif);font-size:clamp(24px,3.2vw,40px);line-height:1.5;letter-spacing:.02em}
+.end-name{margin-top:22px;font-size:13.5px;color:#a9c0e0;letter-spacing:.04em}
+.end-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.end-tags span{font-size:12px;color:#c8d8ef;border:1px solid rgba(255,255,255,.26);
+  border-radius:999px;padding:5px 12px;letter-spacing:.02em}
+
+/* ---------- 页脚 ---------- */
+.foot{background:#061e3d;color:#8fa6c4;font-size:12.5px;padding:34px 0}
+.foot-in{max-width:1120px;margin:0 auto;padding:0 var(--pad);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.foot a{color:#b9cbe4}
+
+/* ---------- 手机 ---------- */
+@media (max-width:980px){
+  .hero-in{grid-template-columns:1fr;padding-top:34px}
+  .hero-visual{order:-1}
+  .hero-main{aspect-ratio:4/3}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .prose,.ptwo,.join{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .brands,.uses{grid-template-columns:1fr 1fr}
+  .shots{grid-template-columns:1fr 1fr}
+  .wall{grid-template-columns:repeat(3,1fr)}
+  .cert-row{grid-template-columns:1fr}
+  .cert-row figure{width:min(320px,100%)}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .nav-in{height:56px;gap:12px}
+  .brand span{display:none}
+  .nav-cta{padding:7px 13px;font-size:12.5px}
+  .links{gap:0}
+  .links a{padding:7px 10px;font-size:13px}
+  .hero h1{font-size:clamp(27px,7.4vw,34px)}
+  .hero-sub{font-size:14.5px}
+  .hero-side{display:none}
+  .stats li{padding:16px 14px}
+  .cards{grid-template-columns:1fr}
+  .brands,.uses{grid-template-columns:1fr}
+  .wall{grid-template-columns:repeat(3,1fr);gap:8px}
+  .wide-imgs{gap:8px}
+  .sec-head{gap:12px}
+  .sec h2 span{display:none}
+  .points li{padding-bottom:14px}
+  .foot-in{flex-direction:column;gap:8px}
+}
+
+/* ---------- 点击放大 ---------- */
+.zoomable{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(8,16,28,.92);display:none;
+  align-items:center;justify-content:center;padding:4vh 4vw}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:92vh;width:auto;height:auto;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb i{position:absolute;top:18px;right:22px;width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.14);color:#fff;font-style:normal;font-size:22px;line-height:40px;
+  text-align:center;cursor:pointer}
+@media (max-width:640px){.lb{padding:2vh 2vw}.lb img{max-height:88vh}}
+
+/* ---------- 手机汉堡菜单 ---------- */
+.burger{display:none;width:38px;height:38px;border:0;background:none;padding:9px 7px;
+  flex-direction:column;justify-content:space-between;cursor:pointer}
+.burger span{display:block;height:2px;background:#25313f;border-radius:2px;transition:transform .2s,opacity .2s}
+.nav.open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media (max-width:680px){
+  .burger{display:flex}
+  .links{position:absolute;top:100%;left:0;right:0;margin:0;background:#fff;
+    flex-direction:column;align-items:stretch;padding:6px 14px 14px;gap:0;
+    border-bottom:1px solid var(--line);box-shadow:0 14px 28px rgba(15,30,60,.08);display:none}
+  .nav.open .links{display:flex}
+  .links a{padding:12px 6px;border-radius:8px;font-size:14.5px;border-bottom:1px solid #f2f4f8}
+  .links a:last-child{border-bottom:0}
+  .nav-cta{margin-left:auto}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="assets/img/image89.webp" alt="利康高科" loading="lazy" decoding="async"><span>利康生物</span></a>
+    <button class="burger" aria-label="菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links"><a href="#about">关于我们</a><a href="#tech">技术与资质</a><a href="#brands">品牌与产品</a><a href="#where">应用场景</a></nav>
+    <a class="nav-cta" href="#contact">联系我们</a>
+  </div>
+</header>
+<main>
+<section class="hero" id="top">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="kicker">SINCE 1988 · 感染控制</p>
+      <h1>自 1988 年起，<br>专注<em>感染控制</em>。</h1>
+      <p class="hero-sub">以现代预防医学为基础，构建覆盖手卫生、皮肤黏膜消毒、医疗器械清洗消毒与
+      环境物表消毒的微生物感染防控体系；服务范围从医院的手术室、ICU 与内镜中心，延伸至公共场所、
+      家庭护理及宠物健康护理。</p>
+      <div class="hero-tags">
+        <span>手卫生</span><span>皮肤黏膜</span><span>医疗器械清洗消毒</span>
+        <span>环境物表</span><span>宠物健康</span>
+      </div>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#brands">看品牌与产品 <span>↓</span></a>
+        <a class="btn btn-ghost" href="#tech">技术与资质</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main"><img src="assets/img/image2.webp" alt="临床使用场景" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+  <ul class="stats">
+    <li><b>1988 年</b><i>起专注感染控制</i></li><li><b>100+</b><i>项专利与软件著作权</i></li><li><b>50+</b><i>款产品 · 4 大系列</i></li><li><b>4</b><i>所高校建立联合研发</i></li>
+  </ul>
+</section>
+<section class="sec" id="about">
+  <div class="sec-in">
+    <header class="sec-head">
+      <p class="num">01</p>
+      <div><h2>从第二军医大学走出来的团队<span>About</span></h2></div>
+    </header>
+    <div class="prose">
+      <div><p>利康生物核心创始团队来自于原解放军第二军医大学（现海军军医大学）训练部、药学院、海医系等科研单位及附属临床医疗机构，自 1988 年起持续深耕中国感染控制领域技术创新。</p><p>通过近四十年的学术探索、技术积淀和临床实践，构建了基于现代预防医学的微生物感染防控系统理论和体系化专业解决方案，在中国医院感染控制及医学消毒发展史上做出了卓越的贡献。</p></div>
+      <div class="motto">
+        <p class="cn">求实　创新<br>严谨　献身</p>
+        <p class="en">One World · One Health</p>
+        <p class="note">利康生物是上海市高新技术企业及上海市专精特新企业，始终秉承第二军医大学校训“求实　创新　严谨　献身”为企业理念，积极培育一流科研成果，生产一流科技产品，提供一流技术服务。</p><p class="note">矢志不渝打造健康中国医学消毒第一品牌，以“ONE WORLD　ONE HEALTH”为企业发展指引，在守护人类健康的伟大事业进程中持续彰显利康担当、贡献利康力量。</p>
+      </div>
+    </div>
+    <div class="shots">
+      <figure><img src="assets/img/image7.webp" alt="团队合影" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/image8.webp" alt="办公楼" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+<section class="sec alt" id="tech">
+  <div class="sec-in">
+    <header class="sec-head">
+      <p class="num">02</p>
+      <div><h2>硬指标：专利、资质与检测数据<span>Technology</span></h2></div>
+    </header>
+    <div class="cards">
+      <div class="card"><span class="k">01</span><h4>100+ 项专利与软著</h4><p>覆盖发明专利、专有技术与软件著作权。从配方体系到包装结构均有自主设计，双层负压无菌真空瓶、泡沫型过氧化氢消毒液等均出自自有研发。</p></div><div class="card"><span class="k">02</span><h4>上海市高新技术企业</h4><p>证书编号 GR202231005656，2022 年 12 月由上海市科委、市财政局、国家税务总局上海市税务局联合颁发；同时获评上海市专精特新企业。</p></div><div class="card"><span class="k">03</span><h4>四所高校联合研发</h4><p>与复旦大学、上海理工大学、上海中医药大学、上海海洋大学建立技术合作，围绕各类微生物感染性疾病的预防与控制开展研究。</p></div><div class="card"><span class="k">04</span><h4>第三方检测数据</h4><p>依据 GB/T 38502-2020《消毒剂实验室杀菌效果检验方法》，30 秒对 MRSA、VRE、多重耐药鲍曼不动杆菌的杀灭对数值均 &gt;5.00；手感与速干性依据 T/FDSA 030—2022 进行感官评价。</p></div><div class="card"><span class="k">05</span><h4>发明专利金奖</h4><p>洁薇柔® 免洗手消毒凝胶获第六届中国（上海）国际发明创新展览会（CSITF）金奖。</p></div><div class="card"><span class="k">06</span><h4>从配方到规范</h4><p>产品指标对标《WS/T 367 医疗机构消毒技术规范》《消毒剂实验室杀菌效果检验方法》等国家与行业标准，注册与备案资料齐全。</p></div>
+    </div>
+    <div class="cert-row">
+      <div class="cert-list">
+        <span>上海市高新技术企业 · 证书编号 GR202231005656</span>
+        <span>上海市专精特新企业</span>
+        <span>CSITF 国际发明创新展览会 金奖</span>
+        <span>双层负压无菌真空瓶 专利申请号 2023111791049</span>
+        <span>泡沫型过氧化氢消毒液 专利申请号 202310374754.2</span>
+        <span>GB/T 38502-2020 检测合格</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="brands">
+  <div class="sec-in">
+    <header class="sec-head">
+      <p class="num">03</p>
+      <div><h2>四条产品线，五十余款产品<span>Portfolio</span></h2></div>
+    </header>
+    <div class="brands"><article class="bcard"><p class="en">Hand Hygiene</p><h4>手卫生</h4><p class="cnt">13 款 · 洁薇柔® / 利康医生®</p><p>覆盖日常洗手到术前刷手的完整手卫生流程，重点解决反复消毒导致的手部干燥与不适。</p><ul><li>洁薇柔抗菌洗手液</li><li>洁薇柔泡沫抗菌洗手液</li><li>洁薇柔®润肤皂液</li><li>洁薇柔®免洗手消毒凝胶</li><li>洁薇柔®速干手消毒液</li><li>洁薇柔®免洗手消毒液</li><li>洁薇柔®免洗手消毒液（无醇型）</li><li>洁薇柔®免洗泡沫手消毒液</li><li>洁薇柔®免洗外科手消毒凝胶</li><li>洁薇柔®免洗外科速干手消毒液</li><li>洁薇柔®4% 洗必泰外科手消毒液</li><li>利康医生®医用折叠式擦手纸</li><li>利康医生®医用擦手纸（辐照灭菌）</li></ul></article><article class="bcard"><p class="en">Skin & Mucosa</p><h4>皮肤黏膜</h4><p class="cnt">11 款 · 利康典® / 安护® / 泰新牌</p><p>碘与洗必泰的多靶点复配：术前皮肤消毒、黏膜与创面冲洗，低致敏、低着色。</p><ul><li>利康典®碘伏皮肤消毒液</li><li>利康典®复合碘皮肤消毒液</li><li>利康典®聚维酮碘消毒液</li><li>利康典®皮肤消毒液</li><li>利康典®Ⅱ型皮肤消毒液</li><li>利康典®Ⅲ型皮肤黏膜消毒液</li><li>利康典®术前皮肤消毒液</li><li>利康典®皮肤黏膜冲洗消毒液</li><li>洁薇柔®2% 洗必泰清洗消毒液</li><li>安护®2% 洗必泰醇消毒液</li><li>泰新牌消毒液</li></ul></article><article class="bcard"><p class="en">Medical Devices</p><h4>医疗器械清洗消毒</h4><p class="cnt">12 款 · LINKWELL®</p><p>内镜、血透与复用器械的清洗、消毒与养护，多酶、过氧乙酸、戊二醛全线覆盖。</p><ul><li>LINKWELL®全效高能多酶清洗液</li><li>LINKWELL®多酶清洁湿巾</li><li>LINKWELL®复合过氧乙酸消毒液</li><li>LINKWELL®中性过氧乙酸消毒液</li><li>LINKWELL®二元过氧乙酸消毒液</li><li>LINKWELL®邻苯二甲醛消毒液</li><li>LINKWELL®复合戊二醛消毒液</li><li>LINKWELL®20% 柠檬酸透析机消毒液</li><li>LINKWELL®50% 柠檬酸透析机消毒液</li><li>LINKWELL®高能碱性清洗剂</li><li>LINKWELL®高能祛垢除锈剂</li><li>LINKWELL®高能柔亮润滑防锈剂</li></ul></article><article class="bcard"><p class="en">Environmental Surfaces</p><h4>环境物表</h4><p class="cnt">16 款 · 爱尔施® / KOFI®</p><p>过氧化氢、酒精与含氯体系，覆盖物体表面、织物、餐饮具与下水道气溶胶。</p><ul><li>爱尔施®75% 酒精消毒液</li><li>爱尔施®75% 酒精消毒湿巾</li><li>爱尔施®0.5% 过氧化氢消毒湿巾</li><li>爱尔施®1% 过氧化氢消毒液</li><li>爱尔施®1% 过氧化氢消毒湿巾</li><li>爱尔施®3% 过氧化氢消毒湿巾</li><li>爱尔施®3% 过氧化氢消毒液（泡沫型）</li><li>爱尔施®5% 过氧化氢消毒湿巾</li><li>爱尔施®表面消毒液</li><li>爱尔施®表面消毒湿巾</li><li>爱尔施®表面消毒湿巾Ⅱ型</li><li>爱尔施®表面消毒湿巾（无醇型）</li><li>KOFI®爱尔施®消毒粉</li><li>KOFI®爱尔施®含氯消毒片</li><li>KOFI®爱尔施®二氯消毒片</li><li>KOFI®爱尔施®含氯固化消毒粉</li></ul></article></div>
+  </div>
+</section>
+<section class="sec alt" id="products">
+  <div class="sec-in">
+    <header class="sec-head">
+      <p class="num">04</p>
+      <div><h2>四条产品线的技术要点<span>Highlights</span></h2></div>
+    </header>
+    <div class="pblock">
+  <div class="phead">
+    <span class="tag">洁薇柔</span>
+    <h3>手卫生系列</h3>
+    <span class="n">13 款</span>
+  </div>
+  <div class="ptwo">
+    <div><ul class="points"><li><b>极紫凝胶：反复消毒不黏腻、不起泥</b><span>专利配方，护肤成分更丰富。第三方感官评价结果：开始揉搓时极易涂抹、过程顺滑不滞涩、干燥后清爽不黏腻、滋润不干燥、无起泥现象。</span></li><li><b>速干手消毒液：可灭活脊灰病毒，15 秒杀灭分枝杆菌</b><span>按《消规》，脊髓灰质炎病毒为无包膜病毒的代表；该产品 30 秒可杀灭 MRSA、VRE 与多重耐药鲍曼不动杆菌。</span></li><li><b>双层负压无菌真空瓶：泵入的空气，进不了瓶</b><span>外层固定支撑、内层负压收缩，配合负压泵头，外界气体不回瓶，同时控制药液被空气污染与瓶内残液两项风险。</span></li><li><b>外科手消毒：揉搓 3 分钟即可戴无菌手套</b><span>葡萄糖酸氯己定 1.0%–1.3%（W/W）+ 乙醇 54.9%–67.1%（V/V），按规范洗净擦干后取 5–10 mL 涂布双手、前臂和上臂下 1/3。</span></li></ul></div>
+    <div><div class="wide-imgs"><figure><img src="assets/img/norm/11-image53.webp" alt="手卫生系列" loading="lazy" decoding="async"><figcaption>免洗外科手消毒凝胶</figcaption></figure><figure><img src="assets/img/norm/11-image44.webp" alt="手卫生系列" loading="lazy" decoding="async"><figcaption>双层负压无菌真空瓶 · 免洗手消毒液</figcaption></figure></div></div>
+  </div>
+  <div class="wall"><figure><img src="assets/img/norm/34-image17.webp" alt="手卫生系列" loading="lazy" decoding="async"></figure><figure><img src="assets/img/norm/34-image20.webp" alt="手卫生系列" loading="lazy" decoding="async"></figure><figure><img src="assets/img/norm/34-image21.webp" alt="手卫生系列" loading="lazy" decoding="async"></figure><figure><img src="assets/img/norm/34-image22.webp" alt="手卫生系列" loading="lazy" decoding="async"></figure><figure><img src="assets/img/norm/34-image23.webp" alt="手卫生系列" loading="lazy" decoding="async"></figure></div>
+</div>
+    <div class="pblock">
+  <div class="phead">
+    <span class="tag">利康典</span>
+    <h3>皮肤黏膜系列</h3>
+    <span class="n">11 款</span>
+  </div>
+  <div class="ptwo">
+    <div><ul class="points"><li><b>AED 重大升级：更低致敏，更耐极端温度</b><span>葡萄糖酸氯己定替代醋酸氯己定；配方体系升级后皮肤更亲和、涂擦铺展更均匀；新工艺耐热耐寒，低温冷冻无沉淀。</span></li><li><b>OP/TX 烷基酚“零”添加</b><span>不再使用烷基酚及烷基酚聚氧乙烯醚，对齐最新法规要求。</span></li><li><b>500 mg/L 有效碘，即开即用</b><span>对齐《WS/T 367》12.2.2 冲洗法：黏膜、伤口创面使用含有效碘 500 mg/L 的消毒液冲洗。</span></li><li><b>碘渍可擦除：低着色，术后好收拾</b><span>分子碘技术降低着色，碘渍更易清除，减少术野周边与床单的清理成本。</span></li></ul></div>
+    <div><div class="wide-imgs"><figure><img src="assets/img/norm/11-image54.webp" alt="皮肤黏膜系列" loading="lazy" decoding="async"><figcaption>利康典皮肤黏膜系列</figcaption></figure><figure><img src="assets/img/norm/11-image57.webp" alt="皮肤黏膜系列" loading="lazy" decoding="async"><figcaption>杀菌机理示意</figcaption></figure><figure><img src="assets/img/norm/11-image63.webp" alt="皮肤黏膜系列" loading="lazy" decoding="async"><figcaption>碘渍可擦除试验</figcaption></figure></div></div>
+  </div>
+  
+</div>
+    <div class="pblock">
+  <div class="phead">
+    <span class="tag">LINKWELL</span>
+    <h3>医疗器械清洗消毒系列</h3>
+    <span class="n">12 款</span>
+  </div>
+  <div class="ptwo">
+    <div><ul class="points"><li><b>全效高能多酶：酶活可达两年</b><span>蛋白酶、脂肪酶、淀粉酶、纤维素酶、核酸酶等多种进口酶（诺维信原厂供应），复配渗透剂与酶稳定剂，pH 中性、对内镜等器械无腐蚀。</span></li><li><b>多酶清洁湿巾：床旁预清洁</b><span>适用于内镜、超声探头等器械表面预清洁，去污、保湿、清洁一步完成，避免分泌物在转运途中干结。</span></li><li><b>复合过氧乙酸：5 分钟高水平消毒，10 分钟灭菌</b><span>最低使用浓度 0.8 g/L 可重复使用，在奥林巴斯内镜清洗机上可复用约 260 根内镜；分解产物为醋酸、氧气和水，可直接排放。</span></li><li><b>中性过氧乙酸：气味更低、腐蚀更小</b><span>中性配方降低过氧乙酸对器械的腐蚀性，兼容性更好，0.8 g/L 可复用约 192 根内镜。</span></li></ul></div>
+    <div><div class="wide-imgs"><figure><img src="assets/img/norm/11-image88.webp" alt="医疗器械清洗消毒系列" loading="lazy" decoding="async"><figcaption>LINKWELL 系列</figcaption></figure><figure><img src="assets/img/norm/11-image99.webp" alt="医疗器械清洗消毒系列" loading="lazy" decoding="async"><figcaption>全效高能多酶清洗液</figcaption></figure><figure><img src="assets/img/norm/11-image102.webp" alt="医疗器械清洗消毒系列" loading="lazy" decoding="async"><figcaption>多酶清洁湿巾</figcaption></figure></div></div>
+  </div>
+  
+</div>
+    <div class="pblock">
+  <div class="phead">
+    <span class="tag">爱尔施</span>
+    <h3>环境物表系列</h3>
+    <span class="n">16 款</span>
+  </div>
+  <div class="ptwo">
+    <div><ul class="points"><li><b>1% 过氧化氢：灭活 EV71 与脊灰病毒</b><span>过氧化氢 + 季铵盐复配，硬质物体表面直接喷洒或擦拭；对 50 m³ 空气现场消毒实验同样合格。</span></li><li><b>75% 酒精湿巾：食用级酒精，食品可接触</b><span>纯玉米发酵酒精原料，加厚无纺布，加甘油与尿囊素，擦完不伤手；开启后有效期 60 天。</span></li><li><b>含氯消毒片：250 mg/L，3 分钟灭活 EV71</b><span>三氯异氰尿酸，有效氯 44%–53%；用于瓜果蔬菜、食品加工工具、织物与一般物体表面，也长期用于地面与设备消毒。</span></li><li><b>泡沫型 3% 过氧化氢：专治下水道气溶胶</b><span>泡沫封闭增大接触面积、滞留挤走残留水分，30 秒杀灭艰难梭菌、10 分钟杀灭枯草芽孢；泡沫高度 30 cm，持续约 20 分钟。</span></li></ul></div>
+    <div><div class="wide-imgs"><figure><img src="assets/img/norm/11-image138.webp" alt="环境物表系列" loading="lazy" decoding="async"><figcaption>爱尔施系列</figcaption></figure><figure><img src="assets/img/norm/11-image141.webp" alt="环境物表系列" loading="lazy" decoding="async"><figcaption>75% 酒精消毒湿巾</figcaption></figure><figure><img src="assets/img/norm/11-image147.webp" alt="环境物表系列" loading="lazy" decoding="async"><figcaption>清洁可视化评估</figcaption></figure></div></div>
+  </div>
+  
+</div>
+  </div>
+</section>
+<section class="sec" id="where">
+  <div class="sec-in">
+    <header class="sec-head">
+      <p class="num">05</p>
+      <div><h2>医院、公共场所、家庭与宠物<span>Where</span></h2></div>
+    </header>
+    <div class="uses">
+      <div class="use"><span class="n">01</span><h4>医院</h4><p>手术室、ICU、内镜中心、血液净化中心与发热门诊。手消毒、术前皮肤准备、器械清洗消毒与病区物表消毒均在此集中使用。</p></div><div class="use"><span class="n">02</span><h4>公共卫生</h4><p>学校、商场、交通枢纽与餐饮后厨。覆盖环境物表消毒、餐饮具与织物处理、下水道气溶胶治理。</p></div><div class="use"><span class="n">03</span><h4>家庭护理</h4><p>手卫生、皮肤黏膜护理与日常物表清洁，以医院级的感控标准，提供适合家庭长期使用的产品。</p></div><div class="use"><span class="n">04</span><h4>宠物健康</h4><p>宠物医院与家庭养宠的清洁消毒需求增长较快，为近年新布局的产品方向。</p></div>
+    </div>
+  </div>
+</section>
+<section class="sec dark endcard" id="contact">
+  <div class="sec-in">
+    <h2>利康生物期待与您合作，共赢未来。</h2>
+    <p class="end-name">上海利康生物高科技有限公司　Shanghai Likang Biology High-Tech Co., Ltd.</p>
+    <p class="end-tags"><span>上海市高新技术企业</span><span>上海市专精特新企业</span><span>100+ 项专利与软件著作权</span></p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p>上海利康生物高科技有限公司　Shanghai Likang Biology High-Tech Co., Ltd.</p>
+    <p>产品信息以最新说明书与注册／备案资料为准</p>
+  </div>
+</footer>
+<script>
+const links=[...document.querySelectorAll('.links a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>io.observe(s));
+
+// 点图放大
+const lb=document.createElement('div');
+lb.className='lb';
+lb.innerHTML='<i>×</i><img alt="">';
+document.body.appendChild(lb);
+const lbImg=lb.querySelector('img');
+document.querySelectorAll('.wide-imgs img,.wall img,.cert-row img,.shots img').forEach(im=>{
+  im.classList.add('zoomable');
+  im.addEventListener('click',()=>{lbImg.src=im.currentSrc||im.src;lb.classList.add('on');});
+});
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on');});
+
+// 手机菜单
+const navEl=document.querySelector('.nav'), burger=document.querySelector('.burger');
+burger.addEventListener('click',()=>{
+  const on=navEl.classList.toggle('open');
+  burger.setAttribute('aria-expanded', on?'true':'false');
+});
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  navEl.classList.remove('open');burger.setAttribute('aria-expanded','false');
+}));
+</script>
+</body>
+</html>
