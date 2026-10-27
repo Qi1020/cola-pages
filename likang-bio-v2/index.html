@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#043a84">
+<link rel="icon" href="assets/img/logo-likang.png" type="image/png">
 <title>上海利康生物高科技有限公司 · 感染控制</title>
 <meta name="description" content="上海利康生物高科技有限公司，核心团队来自原第二军医大学，自 1988 年起专注感染控制。手卫生、皮肤黏膜、医疗器械清洗消毒、环境物表四条产品线。">
 <meta property="og:title" content="上海利康生物高科技有限公司">
@@ -68,10 +69,10 @@ body::before{
   backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);height:62px;
   display:flex;align-items:center;gap:clamp(16px,3vw,40px)}
-.brand{display:flex;align-items:baseline;gap:9px;flex:none}
-.brand b{font-family:var(--serif);font-size:16.5px;letter-spacing:.08em;font-weight:600}
-.brand i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
-  color:var(--brand);transform:translateY(-1px)}
+.brand{display:flex;align-items:center;gap:13px;flex:none}
+.brand img{height:37px;width:auto;display:block}
+.brand span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--muted);
+  padding-left:13px;border-left:1px solid var(--line-2);line-height:1.5;white-space:nowrap}
 .nav nav{display:flex;gap:clamp(2px,1.4vw,18px);margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .nav nav::-webkit-scrollbar{display:none}
 .nav nav a{position:relative;padding:20px 2px;font-size:13.5px;color:var(--ink-2);white-space:nowrap;
@@ -233,6 +234,8 @@ body::before{
   padding:clamp(60px,8vw,110px) 0 clamp(40px,5vw,64px)}
 .end h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,54px);line-height:1.35;
   letter-spacing:-.01em;max-width:20em}
+.end .logo{margin-bottom:clamp(26px,3.4vw,40px)}
+.end .logo img{height:38px;width:auto;display:block}
 .end .nm2{margin-top:clamp(26px,3.4vw,40px);font-size:13.5px;color:rgba(255,255,255,.78);letter-spacing:.06em}
 .end .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .end .tags span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
@@ -283,7 +286,10 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
 <!-- ================= 导航 ================= -->
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><b>利康生物</b><i>LIKANG · 1988</i></a>
+    <a class="brand" href="#top" aria-label="利康高科 首页">
+      <img src="assets/img/logo-likang.png" alt="利康高科 Likang High-tech" width="518" height="137">
+      <span>SINCE 1988</span>
+    </a>
     <nav>
       <a href="#about">关于</a>
       <a href="#facts">资质</a>
@@ -570,6 +576,7 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
 <!-- ================= 结尾 ================= -->
 <section class="end" id="contact">
   <div class="in">
+    <div class="logo rv"><img src="assets/img/logo-likang-white.png" alt="利康高科 Likang High-tech" width="518" height="137"></div>
     <h2 class="rv">利康生物期待与您合作，<br>共赢未来。</h2>
     <p class="nm2 rv">上海利康生物高科技有限公司　Shanghai Likang Biology High-Tech Co., Ltd.</p>
     <div class="tags rv">
