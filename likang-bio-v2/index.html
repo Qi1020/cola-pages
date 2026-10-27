@@ -86,7 +86,7 @@ body::before{
 
 /* ---------- Hero ---------- */
 .hero{padding:clamp(52px,8vw,108px) 0 0}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,80px);align-items:start}
 .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);
   font-size:11px;letter-spacing:.24em;color:var(--brand);text-transform:uppercase}
 .kicker::after{content:"";flex:1;height:1px;background:var(--line-2);max-width:120px}
@@ -101,16 +101,22 @@ body::before{
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
 .hero-tags span{font-size:12px;letter-spacing:.04em;color:var(--brand-2);
   border:1px solid var(--line-2);border-radius:2px;padding:5px 9px;background:#fff}
-.hero-visual{position:relative;margin:0;align-self:center}
-.hero-visual .lead{display:flex;align-items:center;gap:10px;margin-bottom:12px;
+/* 首屏右栏：企业档案卡 */
+.hero-file{margin:0;align-self:center;border-top:2px solid var(--brand);padding-top:0}
+.hero-file .hd{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0 12px;border-bottom:1px solid var(--line);
   font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--muted)}
-.hero-visual .lead::after{content:"";flex:1;height:1px;background:var(--line)}
-.hero-visual .frame{position:relative;background:var(--paper-2);overflow:hidden}
-.hero-visual img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center top;
-  filter:saturate(.96) contrast(1.02)}
-.hero-visual figcaption{position:absolute;left:0;bottom:0;right:0;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#fff;
-  padding:16px 14px 12px;background:linear-gradient(to top,rgba(6,20,40,.62),transparent)}
+.hero-file .big{display:flex;align-items:baseline;gap:10px;padding:22px 0 24px}
+.hero-file .big b{font-family:var(--mono);font-weight:400;font-size:clamp(38px,4.4vw,56px);
+  line-height:1;letter-spacing:-.02em;color:var(--brand)}
+.hero-file .big span{font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.hero-file dl{margin:0;border-top:1px solid var(--line)}
+.hero-file .row{display:grid;grid-template-columns:5.4em 1fr;gap:14px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--line)}
+.hero-file dt{font-size:12.5px;color:var(--ink-2);letter-spacing:.04em}
+.hero-file dd{margin:0;font-size:13.5px;line-height:1.65;color:var(--ink-2);text-align:left}
+.hero-file dd.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--brand)}
+.hero-file .ft{margin-top:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--muted)}
 
 /* 数据带 */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);
@@ -152,7 +158,7 @@ body::before{
 .about-shots figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
   color:var(--muted);padding:9px 2px 0}
 
-/* 硬指标：无卡片，行分隔 */
+/* 资质与检测：无卡片，行分隔 */
 .facts{margin-top:clamp(36px,5vw,62px);border-top:1px solid var(--line)}
 .fact{display:grid;grid-template-columns:64px 1.05fr 1.55fr;gap:clamp(12px,2.4vw,36px);
   padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--line);
@@ -245,8 +251,8 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
 /* ---------- 移动端：一律单列 ---------- */
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;align-items:start}
-  .hero-visual{order:-1;max-width:520px}
-  .hero-visual img{aspect-ratio:3/2}
+  .hero-file{margin-top:clamp(34px,6vw,52px)}
+  .hero-file .big b{font-size:clamp(34px,9vw,46px)}
   .stats{grid-template-columns:1fr 1fr}
   .stats li:nth-child(3)::before{display:none}
   .stats li:nth-child(3),.stats li:nth-child(4){border-top:1px solid var(--line)}
@@ -280,7 +286,7 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
     <a class="brand" href="#top"><b>利康生物</b><i>LIKANG · 1988</i></a>
     <nav>
       <a href="#about">关于</a>
-      <a href="#facts">硬指标</a>
+      <a href="#facts">资质</a>
       <a href="#products">产品</a>
       <a href="#tech">技术要点</a>
       <a href="#where">应用</a>
@@ -302,13 +308,18 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
           <span>环境物表</span><span>宠物健康</span>
         </div>
       </div>
-      <figure class="hero-visual rv">
-        <div class="lead">CLINICAL SCENE</div>
-        <div class="frame">
-          <img src="assets/img/hero-clinical.webp" alt="临床使用场景" width="518" height="346">
-          <figcaption>手术室与内镜中心 · 感染控制</figcaption>
-        </div>
-      </figure>
+      <aside class="hero-file rv">
+        <div class="hd"><span>企业档案 / COMPANY FILE</span><span>SHANGHAI</span></div>
+        <div class="big"><b>1988</b><span>年起</span></div>
+        <dl>
+          <div class="row"><dt>核心团队</dt><dd>原第二军医大学训练部、药学院、海医系及附属临床机构</dd></div>
+          <div class="row"><dt>资质</dt><dd>上海市高新技术企业 · 上海市专精特新企业</dd></div>
+          <div class="row"><dt>证书编号</dt><dd class="mono">GR202231005656</dd></div>
+          <div class="row"><dt>产品线</dt><dd>手卫生 · 皮肤黏膜 · 医疗器械清洗消毒 · 环境物表</dd></div>
+          <div class="row"><dt>应用</dt><dd>医院 · 公共卫生 · 家庭护理 · 宠物健康</dd></div>
+          <div class="row"><dt>企业理念</dt><dd class="mono">ONE WORLD · ONE HEALTH</dd></div>
+        </dl>
+      </aside>
     </div>
 
     <ul class="stats rv">
@@ -357,13 +368,13 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
 
 <hr class="hr">
 
-<!-- ================= 02 硬指标 ================= -->
+<!-- ================= 02 资质与检测 ================= -->
 <section class="sec" id="facts">
   <div class="in">
     <header class="sec-head rv">
       <span class="no">02</span>
-      <h2>硬指标：专利、资质与检测数据</h2>
-      <span class="en">Facts</span>
+      <h2>专利、资质与检测数据</h2>
+      <span class="en">Credentials</span>
     </header>
 
     <div class="facts">
