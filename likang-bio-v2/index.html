@@ -86,7 +86,7 @@ body::before{
 
 /* ---------- Hero ---------- */
 .hero{padding:clamp(52px,8vw,108px) 0 0}
-.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(28px,5vw,72px);align-items:end}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center}
 .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);
   font-size:11px;letter-spacing:.24em;color:var(--brand);text-transform:uppercase}
 .kicker::after{content:"";flex:1;height:1px;background:var(--line-2);max-width:120px}
@@ -101,10 +101,13 @@ body::before{
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
 .hero-tags span{font-size:12px;letter-spacing:.04em;color:var(--brand-2);
   border:1px solid var(--line-2);border-radius:2px;padding:5px 9px;background:#fff}
-.hero-visual{position:relative}
+.hero-visual{position:relative;margin:0;align-self:center}
+.hero-visual .lead{display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--muted)}
+.hero-visual .lead::after{content:"";flex:1;height:1px;background:var(--line)}
 .hero-visual .frame{position:relative;background:var(--paper-2);overflow:hidden}
-.hero-visual img{width:100%;aspect-ratio:4/5;object-fit:cover;
-  filter:saturate(.94) contrast(1.02)}
+.hero-visual img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center top;
+  filter:saturate(.96) contrast(1.02)}
 .hero-visual figcaption{position:absolute;left:0;bottom:0;right:0;
   font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#fff;
   padding:16px 14px 12px;background:linear-gradient(to top,rgba(6,20,40,.62),transparent)}
@@ -243,7 +246,7 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;align-items:start}
   .hero-visual{order:-1;max-width:520px}
-  .hero-visual img{aspect-ratio:16/11}
+  .hero-visual img{aspect-ratio:3/2}
   .stats{grid-template-columns:1fr 1fr}
   .stats li:nth-child(3)::before{display:none}
   .stats li:nth-child(3),.stats li:nth-child(4){border-top:1px solid var(--line)}
@@ -300,9 +303,10 @@ html.static .rv{opacity:1!important;transform:none!important;transition:none!imp
         </div>
       </div>
       <figure class="hero-visual rv">
+        <div class="lead">CLINICAL SCENE</div>
         <div class="frame">
-          <img src="assets/img/image2.webp" alt="临床使用场景" width="900" height="1125">
-          <figcaption>CLINICAL SCENE</figcaption>
+          <img src="assets/img/hero-clinical.webp" alt="临床使用场景" width="518" height="346">
+          <figcaption>手术室与内镜中心 · 感染控制</figcaption>
         </div>
       </figure>
     </div>
