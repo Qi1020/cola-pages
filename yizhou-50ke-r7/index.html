@@ -114,6 +114,72 @@
   }
   .aside b{color:var(--ochre);font-weight:600;}
 
+  figure.slide{
+    margin:1.7em 0 1.4em;padding:0;
+  }
+  figure.slide img{
+    display:block;width:100%;height:auto;border-radius:2px;
+    cursor:zoom-in;
+  }
+  figure.slide figcaption{
+    margin-top:11px;font-size:.86em;line-height:1.75;color:var(--ink);
+  }
+  figure.slide figcaption em{
+    font-style:normal;color:var(--ochre);margin-right:6px;font-weight:700;
+  }
+
+  .viz{
+    margin:1.65em 0 1.3em;padding:18px 0 20px;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  }
+  .viz-head{
+    font-size:.88em;letter-spacing:.06em;color:var(--ochre);
+    font-weight:700;margin:0 0 14px;
+  }
+  .viz-row{margin:0 0 16px;}
+  .viz-row:last-of-type{margin-bottom:0;}
+  .viz-label{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    font-size:.94em;line-height:1.55;margin:0 0 7px;
+  }
+  .viz-label span{color:var(--ink-2);}
+  .viz-label strong{
+    color:var(--ink);font-weight:700;white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  .viz-row.accent .viz-label strong{color:var(--ochre);}
+  .viz-track{
+    width:100%;height:12px;background:var(--paper-2);border-radius:2px;overflow:hidden;
+  }
+  .viz-fill{
+    height:100%;background:#b8a58d;border-radius:2px;
+  }
+  .viz-row.accent .viz-fill{background:var(--ochre);}
+  .viz-foot{
+    margin:15px 0 0;font-size:.88em;line-height:1.85;color:var(--ink-2);
+  }
+
+  #lb{
+    position:fixed;inset:0;background:rgba(20,17,12,.96);
+    display:none;flex-direction:column;justify-content:center;align-items:center;
+    padding:64px 12px 28px;z-index:100;
+  }
+  #lb.open{display:flex;}
+  #lb img{
+    max-width:100%;max-height:76vh;object-fit:contain;border-radius:2px;
+  }
+  #lb p{
+    color:#efe6d7;font-size:.86em;line-height:1.65;text-align:center;
+    margin:14px 0 0;max-width:520px;
+  }
+  #lb button{
+    position:fixed;top:14px;right:14px;
+    min-width:74px;height:42px;padding:0 16px;
+    border:1px solid rgba(239,230,215,.45);border-radius:999px;
+    background:rgba(20,17,12,.85);color:#f7f2e7;
+    font-size:15px;font-family:inherit;font-weight:600;
+  }
+
   ol.take{margin:1.2em 0 0;padding:0;list-style:none;counter-reset:tk;}
   ol.take li{
     counter-increment:tk;position:relative;
@@ -205,7 +271,7 @@
 <div class="fontrow">
   <span>觉得字小？</span>
   <button id="minus" aria-label="缩小字号">A−</button>
-  <em id="fz">19</em>
+  <em id="fz">20</em>
   <button id="plus" aria-label="放大字号">A+</button>
 </div>
 
@@ -230,6 +296,22 @@
   <p>先讲一件刚发生的事。做人工智能模型的那家美国公司 Anthropic（中国人熟悉的 Claude 就是它做的），11 月 18 日到 19 日在美股上市，发行 9.8 亿股，每股 83 美元，一次募到 813 亿美元，算上承销商额外卖出的部分，实际进账超过 1000 亿美元，公司估值到 1.2 万亿到 1.5 万亿美元。今年年初马斯克的公司募了 750 亿美元，这个纪录被它刷掉了。</p>
   <p>招股书里有个反常的细节。一般公司上市，股份大头握在一号人物手里，这次从 OpenAI 出来创业的七位创始人，几乎是平分着套现，每人约 2.8 亿美元，折人民币约 20 亿元。单人套现最多的还不是创始人达里奥·阿莫代伊，而是公司里管算力调配的那个人。讲课人的解读很直白：这家公司内部讲究平权，同时这也说明，今天做 AI，谁手里攥着算力调度，谁就最值钱。</p>
   <p>顺着这笔钱往后看，他对美国的判断是：经济眼下只剩“科技公司砸钱建数据中心、买芯片”这一个增长故事，全靠 AI 掀起新一轮工业革命的预期把股市往上推，不容有失。偏偏美联储在连续 18 个月按住不动之后刚刚重启加息，他预计未来半年到一年大概率还得再加。</p>
+  <div class="viz" aria-label="Anthropic 账本数字对比">
+    <p class="viz-head">数字对比 · 上市进账与未来算力账单</p>
+    <div class="viz-row">
+      <div class="viz-label"><span>IPO 加战略投资到手</span><strong>1073 亿美元</strong></div>
+      <div class="viz-track"><div class="viz-fill" style="width:12%"></div></div>
+    </div>
+    <div class="viz-row accent">
+      <div class="viz-label"><span>未来几年算力采购承诺</span><strong>约 9000 亿美元</strong></div>
+      <div class="viz-track"><div class="viz-fill" style="width:100%"></div></div>
+    </div>
+    <p class="viz-foot">账上新拿到的钱只够填将来算力账单的一成出头，所以高估值必须靠高增长顶住。</p>
+  </div>
+  <figure class="slide">
+    <img src="./assets/003-ppt-17-账单.jpg" alt="课程原课件：1.5万亿的背后，是一张更大的账单" loading="lazy">
+    <figcaption><em>课上原课件</em>17/35 页讲的就是这笔账（轻点图片可放大看细字）。</figcaption>
+  </figure>
   <p>那未来五到十年谁最受益？他的结论是中国。理由不玄：一个开店的、做外贸的、管工厂的，犯不着去买贵一百倍的最顶尖模型，两三年后免费开放使用的那些模型完全够用，谁能把便宜好用的东西塞进各行各业，谁才算真正落地。他给了三条底牌：国产模型一直咬住第一梯队，差距两三个月没有掉队；人口基数大，每天在产出美国没有的真实数据；AI 的下一步要从手机屏幕里走出来，装进扫地机、擦窗机、工厂机械臂里干活，而全世界能一年造出几千万台机器人的地方只有中国。</p>
 </section>
 
@@ -247,12 +329,28 @@
   <p>怎么做出有人看的深度内容，他总结成两句：必须借着热点讲，但在同一个热点上要比别人<strong>更深</strong>、<strong>更有意思</strong>。</p>
   <p>“更深”是他自己的笨办法。2023 到 2024 年他停更了半年想出路，复出后让助理现场扔一个问题，自己不做任何准备，站在电子白板前边写边讲半小时到一小时，拍完砍掉八九成，只留最紧凑的五到八分钟。那时他的抖音号只有两三千粉丝，六条这样的视频直接做到百万粉丝、几个亿的曝光，养活了后面近两年的生意。等全网都开始抄白板，他就换形式，比如把课件做成一个链接发到微信里，手机点开就能看。</p>
   <p>“更有意思”不是逗乐，是像面馆熬的那锅老汤：今天端上来的是担担面还是米线，喝一口就知道是你家的味道。直接让 AI 写，它调的是全网公共常识，写出来就是五六十​分的行活；想有自己的味道，每篇稿子发出去之前，都得先在你自己攒的知识库和写作规则里过一遍。他这套东西从 2024 年起天天拿真实选题喂，磨了两年。每次让 AI 动笔前，先把五件事写清楚：这篇给谁看、今天只聊哪一件、我的判断是什么、谁会强烈反对、还缺哪些案例要 AI 先去搜。</p>
+  <figure class="slide">
+    <img src="./assets/003-ppt-19-选题.jpg" alt="课程原课件：现在，把知识库用起来做选题" loading="lazy">
+    <figcaption><em>课上原课件</em>19/35 页：旧积累加上新热点，才做出一条自己的新内容（轻点可放大）。</figcaption>
+  </figure>
 </section>
 
 <section id="s4">
   <h2 class="h">花几百块算力，先替客户把活干完</h2>
   <p>这是整节课最能直接换钱的一段，他自己算了一笔账。现在各行各业去投广告买客户，算到最后真正掏钱成交那一步，一个客户基本要花一千块以上。他自己前端卖 49 元的三天课，也是亏着卖，靠后面的年课才能打平。既然拿下一个客户本来就要花一千块，那从里面拿出两三百块换成 AI 算力，在对方还没付一分钱之前，先替他把活干漂亮，情况就完全不一样了。</p>
   <p class="quote">“老板缺的不是钱，是懂业务、能做出高审美交付的稀缺帮手。”</p>
+  <div class="viz" aria-label="获客成本数字对比">
+    <p class="viz-head">数字对比 · 拿下一个客户怎么花钱</p>
+    <div class="viz-row">
+      <div class="viz-label"><span>传统投广告买线索到成交</span><strong>1000 元以上 / 客</strong></div>
+      <div class="viz-track"><div class="viz-fill" style="width:100%"></div></div>
+    </div>
+    <div class="viz-row accent">
+      <div class="viz-label"><span>先用 AI 做出成品送上门</span><strong>200–500 元算力</strong></div>
+      <div class="viz-track"><div class="viz-fill" style="width:35%"></div></div>
+    </div>
+    <p class="viz-foot">花一半不到的成本先把真活交到对方手上，比花钱买联系方式更容易开口谈合作。</p>
+  </div>
   <p>具体怎么做：挑五到五十个有生意、但内容明显没做好的商家或博主，把对方过去发过的东西，连同行业里做得最好的博主的爆款，一起抓下来存进自己的知识库，然后免费替对方写出五条能直接开拍的口播稿，海报、品牌册子、商业计划书也能顺手做。发过去只留一句“这是我帮你做的，你随便用”。绝大多数老板根本分不出这稿子是高手写的还是你用工具做出来的，只要比他现有的团队强，合作的门自己会开。</p>
   <p>为了证明这件事门槛很低，他当场演示了一遍，用的全是普通工具：一个能长期记住网站登录状态的浏览器，一个开源的内容抓取工具，加上一个能听懂人话、自己动手干活的 AI 工作台。抓什么、存到哪儿，就用日常说法交代一句，剩下的 AI 自己会做；连字幕烧死在画面里的视频，它也会自己下载再转成文字。晚上睡觉前挂上二十个同行账号跑一夜，第二天早上，整个行业的弹药库就摆在你电脑里了。</p>
   <p>课程最后他留了个引子。以前用 AI，是在不同窗口里分别盯一堆任务；接下来会变成你只跟一个“管家”说话，由它在后台调兵遣将。这是下一节课要讲的。</p>
@@ -288,6 +386,12 @@
 <footer>笔记整理 · 2026 年 11 月</footer>
 
 <button id="top" aria-label="回到顶部">↑</button>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="课件大图">
+  <button id="lb-close" aria-label="关闭大图">关闭</button>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-cap"></p>
+</div>
 
 <script>
 (function(){
@@ -325,6 +429,20 @@
       history.replaceState(null,'',a.getAttribute('href'));
     });
   });
+  // 点击课件图放大
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img'), lbCap=document.getElementById('lb-cap');
+  document.querySelectorAll('figure.slide img').forEach(function(img){
+    img.addEventListener('click',function(){
+      lbImg.src=img.src;
+      lbImg.alt=img.alt;
+      var cap=img.parentNode.querySelector('figcaption');
+      lbCap.textContent=cap?cap.textContent:'';
+      lb.classList.add('open');
+    });
+  });
+  function closeLb(){ lb.classList.remove('open'); }
+  document.getElementById('lb-close').onclick=closeLb;
+  lb.addEventListener('click',closeLb);
 })();
 </script>
 </body>
