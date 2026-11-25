@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f2e7">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="李一舟《一舟一课3.0》第五十课笔记：Anthropic 上市、2027 年趋势，以及用 AI 做内容、低成本获客的做法。">
+<title>2027 年会怎么变，以及普通人怎么用 AI 挣钱</title>
+<style>
+  :root{
+    --paper:#f7f2e7;
+    --paper-2:#f1e9da;
+    --ink:#1c1811;
+    --ink-2:#4b4335;
+    --ochre:#8a4f2b;
+    --ochre-soft:#b9805a;
+    --rule:#d6c8b2;
+    --base:20px;
+  }
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(192,138,99,.10), transparent 45%),
+      radial-gradient(circle at 88% 26%, rgba(154,91,52,.07), transparent 40%),
+      radial-gradient(circle at 30% 78%, rgba(192,138,99,.08), transparent 42%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:var(--base);
+    line-height:1.95;
+    letter-spacing:.01em;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    padding:0 20px calc(48px + env(safe-area-inset-bottom));
+  }
+  .bar{
+    position:fixed;top:0;left:0;right:0;height:3px;
+    background:transparent;z-index:40;
+  }
+  .bar em{display:block;height:100%;width:0;background:var(--ochre-soft);transition:width .12s linear;}
+
+  header{padding:38px 0 6px;}
+  .kicker{
+    font-size:.78em;letter-spacing:.14em;color:var(--ochre);
+    font-weight:600;margin:0 0 14px;
+  }
+  h1{
+    font-family:"Songti SC","Source Han Serif SC",Georgia,serif;
+    font-size:1.62em;line-height:1.45;margin:0 0 18px;font-weight:600;
+    letter-spacing:.01em;text-wrap:balance;
+  }
+  .meta{
+    font-size:.84em;color:var(--ink-2);line-height:1.85;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:13px 0;margin:0 0 8px;
+  }
+  .meta span{display:block;}
+  .lead{
+    margin:26px 0 0;font-size:1em;color:var(--ink);
+  }
+  .lead p{margin:0 0 1.25em;}
+
+  nav.toc{
+    margin:30px 0 8px;padding:18px 0 2px;
+    border-top:1px solid var(--rule);
+  }
+  nav.toc h2{
+    font-size:.82em;letter-spacing:.14em;color:var(--ochre);
+    margin:0 0 12px;font-weight:600;font-family:inherit;
+  }
+  nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc;}
+  nav.toc li{counter-increment:toc;margin:0 0 2px;}
+  nav.toc a{
+    display:block;padding:13px 24px 13px 36px;position:relative;
+    color:var(--ink);text-decoration:none;font-size:.96em;line-height:1.65;
+    border-bottom:1px dotted var(--rule);
+  }
+  nav.toc a::before{
+    content:counter(toc);position:absolute;left:0;top:13px;
+    color:var(--ochre);font-size:.86em;font-weight:700;
+    font-variant-numeric:tabular-nums;
+  }
+  nav.toc a::after{
+    content:"›";position:absolute;right:4px;top:50%;transform:translateY(-50%);
+    color:var(--ochre-soft);font-size:1.25em;line-height:1;
+  }
+  nav.toc a:active{background:var(--paper-2);}
+
+  section{margin:40px 0 0;scroll-margin-top:18px;}
+  h2.h{
+    font-family:"Songti SC","Source Han Serif SC",Georgia,serif;
+    font-size:1.2em;line-height:1.55;font-weight:600;
+    margin:0 0 6px;padding:0 0 12px;
+    border-bottom:1px solid var(--rule);
+  }
+  h2.h::before{
+    content:"";display:inline-block;width:22px;height:2px;
+    background:var(--ochre);vertical-align:.28em;margin-right:12px;
+  }
+  section p{margin:1.25em 0 0;text-align:left;}
+  section p:first-of-type{margin-top:1.3em;}
+  strong{font-weight:700;color:#1a1611;}
+  .quote{
+    margin:1.3em 0 0;padding:2px 0 2px 16px;
+    border-left:2px solid var(--ochre-soft);
+    color:var(--ink-2);font-style:normal;
+  }
+  .aside{
+    margin:1.4em 0 0;padding:15px 16px;
+    background:var(--paper-2);border-radius:3px;
+    font-size:.94em;color:var(--ink-2);line-height:1.9;
+  }
+  .aside b{color:var(--ochre);font-weight:600;}
+
+  ol.take{margin:1.2em 0 0;padding:0;list-style:none;counter-reset:tk;}
+  ol.take li{
+    counter-increment:tk;position:relative;
+    padding:0 0 18px 36px;line-height:1.9;
+  }
+  ol.take li::before{
+    content:counter(tk);position:absolute;left:0;top:.15em;
+    width:22px;height:22px;line-height:22px;text-align:center;
+    font-size:.72em;color:#fff;background:var(--ochre);border-radius:50%;
+    font-variant-numeric:tabular-nums;
+  }
+  ol.take li:last-child{padding-bottom:0;}
+
+  details.ts{
+    margin:36px 0 0;border-top:1px solid var(--rule);padding-top:18px;
+  }
+  details.ts summary{
+    cursor:pointer;font-size:.9em;color:var(--ochre);list-style:none;
+  }
+  details.ts summary::-webkit-details-marker{display:none;}
+  details.ts summary::after{content:" ＋";}
+  details.ts[open] summary::after{content:" －";}
+  details.ts ul{margin:14px 0 0;padding:0 0 0 2px;list-style:none;}
+  details.ts li{
+    font-size:.9em;color:var(--ink-2);line-height:1.8;
+    padding:7px 0;border-bottom:1px dotted var(--rule);
+  }
+  details.ts code{
+    font-family:ui-monospace,Menlo,monospace;font-size:.92em;
+    color:var(--ochre);margin-right:8px;font-variant-numeric:tabular-nums;
+  }
+
+  .note{
+    margin:40px 0 0;padding:18px 0 0;border-top:1px solid var(--rule);
+    font-size:.88em;color:var(--ink-2);line-height:1.95;
+  }
+  .note h3{font-size:1em;margin:0 0 8px;color:var(--ink);font-weight:600;}
+  .note p{margin:0 0 .8em;}
+
+  footer{
+    margin:34px 0 0;text-align:center;
+    font-size:.76em;color:var(--ochre-soft);letter-spacing:.06em;
+  }
+
+  .fontrow{
+    display:flex;align-items:center;gap:12px;
+    margin:18px 0 0;padding:0;
+    font-size:.85em;color:var(--ink-2);
+  }
+  .fontrow span{letter-spacing:.04em;}
+  .fontrow button{
+    min-width:60px;height:40px;padding:0 16px;
+    border:1px solid var(--rule);border-radius:999px;
+    background:rgba(255,255,255,.4);color:var(--ochre);
+    font-size:17px;font-family:inherit;line-height:1;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .fontrow button:active{background:var(--paper-2);}
+  .fontrow em{font-style:normal;color:var(--ochre);font-variant-numeric:tabular-nums;}
+
+  #top{
+    position:fixed;right:14px;
+    bottom:calc(18px + env(safe-area-inset-bottom));
+    width:42px;height:42px;border-radius:50%;padding:0;
+    border:1px solid var(--rule);background:rgba(247,242,231,.96);
+    color:var(--ochre);font-size:16px;line-height:1;
+    box-shadow:0 1px 8px rgba(36,31,24,.12);
+    opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;
+    -webkit-tap-highlight-color:transparent;
+  }
+  #top.show{opacity:1;pointer-events:auto;}
+  @media (min-width:560px){
+    body{max-width:600px;margin:0 auto;padding-left:32px;padding-right:32px;}
+  }
+</style>
+</head>
+<body>
+<div class="bar"><em id="prog"></em></div>
+
+<header>
+  <p class="kicker">一舟一课 3.0 · 第五十课</p>
+  <h1>2027 年会怎么变，<br>普通人怎么用 AI 挣钱</h1>
+  <div class="meta">
+    <span>课程：2026 年 11 月 21 日直播回放，约 96 分钟</span>
+    <span>这是一份听课笔记，观点属于讲课人，文末单独写了提醒</span>
+  </div>
+</header>
+
+<div class="fontrow">
+  <span>觉得字小？</span>
+  <button id="minus" aria-label="缩小字号">A−</button>
+  <em id="fz">19</em>
+  <button id="plus" aria-label="放大字号">A+</button>
+</div>
+
+<div class="lead">
+  <p>这节课从头到尾就回答两件事。第一，钱往哪里流：AI 公司、各国经济、国内的大工程，明年会是什么局面。第二，普通人手里能干什么：怎么做出有人看的内容，怎么用几十块钱的算力，换来一个愿意跟你合作的客户。</p>
+  <p>课是在外地出差时讲的，中间调麦克风、连远程电脑断线折腾了十来分钟，那些岔子都删掉了。真正有用的部分按下面四条讲。</p>
+</div>
+
+<nav class="toc">
+  <h2>往下看</h2>
+  <ol>
+    <li><a href="#s1">AI 公司上市，创了纪录</a></li>
+    <li><a href="#s2">明年的生意，先看这三本账</a></li>
+    <li><a href="#s3">做内容，怎么让人愿意看完</a></li>
+    <li><a href="#s4">花几百块算力，先替客户把活干完</a></li>
+    <li><a href="#s5">能带走的四件事</a></li>
+  </ol>
+</nav>
+
+<section id="s1">
+  <h2 class="h">AI 公司上市，创了纪录</h2>
+  <p>先讲一件刚发生的事。做人工智能模型的那家美国公司 Anthropic（中国人熟悉的 Claude 就是它做的），11 月 18 日到 19 日在美股上市，发行 9.8 亿股，每股 83 美元，一次募到 813 亿美元，算上承销商额外卖出的部分，实际进账超过 1000 亿美元，公司估值到 1.2 万亿到 1.5 万亿美元。今年年初马斯克的公司募了 750 亿美元，这个纪录被它刷掉了。</p>
+  <p>招股书里有个反常的细节。一般公司上市，股份大头握在一号人物手里，这次从 OpenAI 出来创业的七位创始人，几乎是平分着套现，每人约 2.8 亿美元，折人民币约 20 亿元。单人套现最多的还不是创始人达里奥·阿莫代伊，而是公司里管算力调配的那个人。讲课人的解读很直白：这家公司内部讲究平权，同时这也说明，今天做 AI，谁手里攥着算力调度，谁就最值钱。</p>
+  <p>顺着这笔钱往后看，他对美国的判断是：经济眼下只剩“科技公司砸钱建数据中心、买芯片”这一个增长故事，全靠 AI 掀起新一轮工业革命的预期把股市往上推，不容有失。偏偏美联储在连续 18 个月按住不动之后刚刚重启加息，他预计未来半年到一年大概率还得再加。</p>
+  <p>那未来五到十年谁最受益？他的结论是中国。理由不玄：一个开店的、做外贸的、管工厂的，犯不着去买贵一百倍的最顶尖模型，两三年后免费开放使用的那些模型完全够用，谁能把便宜好用的东西塞进各行各业，谁才算真正落地。他给了三条底牌：国产模型一直咬住第一梯队，差距两三个月没有掉队；人口基数大，每天在产出美国没有的真实数据；AI 的下一步要从手机屏幕里走出来，装进扫地机、擦窗机、工厂机械臂里干活，而全世界能一年造出几千万台机器人的地方只有中国。</p>
+</section>
+
+<section id="s2">
+  <h2 class="h">明年的生意，先看这三本账</h2>
+  <p>想知道国内接下来五年的钱往哪儿砸，他的建议很土：别听小道消息，把国家的“十五五”规划纲要（2026 到 2030 年）调出来，对着自己行业看两样东西，109 项重大工程，和六张网——水网、电网、算力网、通信网、城市地下管网、物流网。十年前那笔“四万亿”投的是钢筋水泥，这一轮投的是高端材料、工业软件、造机床的机床这类东西，加上“东数西算”和在西部建的一批算力基地，搭的是未来几十年的底盘。</p>
+  <p>落到眼前做生意的体感上，有一个很多人凭感觉会搞反的事实：<strong>大城市和中小城市的消费正在倒挂</strong>。大城市的白领工资没涨，房贷一分不能少交，账上有点钱也得留着防身，能少花就少花。中小城市多数人家里有一两套房、没有房贷压身，手头反而松，吃喝消费都放得开。不在北上广深、守在低线城市做小生意的人，眼下比大城市的同行好活。</p>
+  <p>做外贸的可以顺着他的三条线看海外。欧洲整体被能源卡住脖子，全球前 20 家 AI 公司中美占 19 家、欧洲只有法国占一席，法国意大利英国都不行，明年相对有看头的是移民政策松、能吸人吸钱的西班牙，和制造业回流的德国。亚洲这边，油气和粮食都靠进口的印尼、泰国、马来西亚会难受；有算力优势的新加坡，抓住芯片存储、精密器件上游的日本韩国依然稳；印度短期承压，但年轻人多、英语底子好，长期是个强劲对手。</p>
+  <p class="aside"><b>他提醒了一句。</b>如果国际油价真出现四成的涨幅，这里面的风险不是多花点油钱，是所有成本一起往上走。做生意的，提前用 AI 把这种情况推演一遍，比事后救火便宜。</p>
+</section>
+
+<section id="s3">
+  <h2 class="h">做内容，怎么让人愿意看完</h2>
+  <p>做视频的人今年绕不开一个现实：短剧已经冲到国内第四大手机应用，把人的注意力抢走了一大半。短剧把观众的胃口养得很刁，两三分钟平铺直叙的科普，现在很多人根本看不下去。他的判断相反：靠狗血冲突、不给任何新东西的劣质短剧已经被管起来了，数量接下来会断崖式下跌，空出来的那些时间，正好是认真做内容的人的机会。</p>
+  <p>怎么做出有人看的深度内容，他总结成两句：必须借着热点讲，但在同一个热点上要比别人<strong>更深</strong>、<strong>更有意思</strong>。</p>
+  <p>“更深”是他自己的笨办法。2023 到 2024 年他停更了半年想出路，复出后让助理现场扔一个问题，自己不做任何准备，站在电子白板前边写边讲半小时到一小时，拍完砍掉八九成，只留最紧凑的五到八分钟。那时他的抖音号只有两三千粉丝，六条这样的视频直接做到百万粉丝、几个亿的曝光，养活了后面近两年的生意。等全网都开始抄白板，他就换形式，比如把课件做成一个链接发到微信里，手机点开就能看。</p>
+  <p>“更有意思”不是逗乐，是像面馆熬的那锅老汤：今天端上来的是担担面还是米线，喝一口就知道是你家的味道。直接让 AI 写，它调的是全网公共常识，写出来就是五六十​分的行活；想有自己的味道，每篇稿子发出去之前，都得先在你自己攒的知识库和写作规则里过一遍。他这套东西从 2024 年起天天拿真实选题喂，磨了两年。每次让 AI 动笔前，先把五件事写清楚：这篇给谁看、今天只聊哪一件、我的判断是什么、谁会强烈反对、还缺哪些案例要 AI 先去搜。</p>
+</section>
+
+<section id="s4">
+  <h2 class="h">花几百块算力，先替客户把活干完</h2>
+  <p>这是整节课最能直接换钱的一段，他自己算了一笔账。现在各行各业去投广告买客户，算到最后真正掏钱成交那一步，一个客户基本要花一千块以上。他自己前端卖 49 元的三天课，也是亏着卖，靠后面的年课才能打平。既然拿下一个客户本来就要花一千块，那从里面拿出两三百块换成 AI 算力，在对方还没付一分钱之前，先替他把活干漂亮，情况就完全不一样了。</p>
+  <p class="quote">“老板缺的不是钱，是懂业务、能做出高审美交付的稀缺帮手。”</p>
+  <p>具体怎么做：挑五到五十个有生意、但内容明显没做好的商家或博主，把对方过去发过的东西，连同行业里做得最好的博主的爆款，一起抓下来存进自己的知识库，然后免费替对方写出五条能直接开拍的口播稿，海报、品牌册子、商业计划书也能顺手做。发过去只留一句“这是我帮你做的，你随便用”。绝大多数老板根本分不出这稿子是高手写的还是你用工具做出来的，只要比他现有的团队强，合作的门自己会开。</p>
+  <p>为了证明这件事门槛很低，他当场演示了一遍，用的全是普通工具：一个能长期记住网站登录状态的浏览器，一个开源的内容抓取工具，加上一个能听懂人话、自己动手干活的 AI 工作台。抓什么、存到哪儿，就用日常说法交代一句，剩下的 AI 自己会做；连字幕烧死在画面里的视频，它也会自己下载再转成文字。晚上睡觉前挂上二十个同行账号跑一夜，第二天早上，整个行业的弹药库就摆在你电脑里了。</p>
+  <p>课程最后他留了个引子。以前用 AI，是在不同窗口里分别盯一堆任务；接下来会变成你只跟一个“管家”说话，由它在后台调兵遣将。这是下一节课要讲的。</p>
+</section>
+
+<section id="s5">
+  <h2 class="h">能带走的四件事</h2>
+  <ol class="take">
+    <li>把国家的 109 项重大工程和“六张网”找出来，对着自己行业圈一遍，看看明年能沾上哪一块。</li>
+    <li>挑一个你想合作的商家或客户，提前替他把五条口播稿或一套宣传方案做完，不谈价格，先把成品发过去。</li>
+    <li>把手边那些做得好的同行内容，攒成自己的资料库。以后每次写东西，先过一遍它，再让 AI 动笔。</li>
+    <li>以后给 AI 派活，别只说“帮我写个文案”，把五件事写全：给谁看、只聊什么、我的判断、谁会反对、还缺什么材料。</li>
+  </ol>
+</section>
+
+<details class="ts">
+  <summary>如果听了原课，这几处值得再听一遍</summary>
+  <ul>
+    <li><code>06:45</code> 重新讲上市规模，七位创始人平分套现，和那个管算力的人</li>
+    <li><code>16:45</code> 大城市和小城市消费倒挂的账，以及欧洲、东南亚、日韩的明年判断</li>
+    <li><code>27:20</code> 为什么五到十年看，中国会是这轮 AI 的最大受益者</li>
+    <li><code>42:40</code> 两三千粉丝做到百万粉丝的白板长录像、短剪法</li>
+    <li><code>50:40</code> 用两三百块算力替代一千块买客户的做法</li>
+  </ul>
+</details>
+
+<div class="note">
+  <h3>关于这份笔记</h3>
+  <p>笔记里的观点、判断和数字都出自讲课人，不代表整理者的看法。文中几处明显的口误已经改正，比如把募资额念成“813 美元”，按 9.8 亿股乘 83 美元算应为 813 亿美元。</p>
+  <p>涉及加息节奏、油价涨幅、各国明年增速、中美胜负这些内容，都是他个人的推演，课上他也反复说过不构成投资建议。真要拿去谈生意、做判断，请以官方统计和公司公开文件为准。</p>
+</div>
+
+<footer>笔记整理 · 2026 年 11 月</footer>
+
+<button id="top" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var root=document.documentElement, KEY='k5_font';
+  var size=parseInt(localStorage.getItem(KEY)||'20',10);
+  var fz=document.getElementById('fz');
+  function apply(){
+    size=Math.min(26,Math.max(16,size));
+    root.style.setProperty('--base',size+'px');
+    fz.textContent=size;
+    localStorage.setItem(KEY,size);
+  }
+  apply();
+  document.getElementById('plus').onclick=function(){ size+=1; apply(); };
+  document.getElementById('minus').onclick=function(){ size-=1; apply(); };
+  var topBtn=document.getElementById('top');
+  topBtn.onclick=function(){ window.scrollTo({top:0,behavior:'smooth'}); };
+
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var h=document.body.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?Math.min(100,window.scrollY/h*100):0)+'%';
+    topBtn.classList.toggle('show',window.scrollY>700);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // 目录点击：平滑滚动，留出一点上边距
+  document.querySelectorAll('nav.toc a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(!t) return;
+      e.preventDefault();
+      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-14,behavior:'smooth'});
+      history.replaceState(null,'',a.getAttribute('href'));
+    });
+  });
+})();
+</script>
+</body>
+</html>
