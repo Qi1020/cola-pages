@@ -161,16 +161,25 @@
 
   #lb{
     position:fixed;inset:0;background:rgba(20,17,12,.96);
-    display:none;flex-direction:column;justify-content:center;align-items:center;
-    padding:64px 12px 28px;z-index:100;
+    display:none;flex-direction:column;
+    padding:58px 10px 18px;z-index:100;
   }
   #lb.open{display:flex;}
+  #lb-scroll{
+    flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;
+    display:flex;align-items:center;justify-content:center;
+  }
   #lb img{
-    max-width:100%;max-height:76vh;object-fit:contain;border-radius:2px;
+    display:block;max-width:100%;max-height:100%;object-fit:contain;
+    border-radius:2px;cursor:zoom-in;
+  }
+  #lb.zoomed #lb-scroll{align-items:flex-start;justify-content:flex-start;}
+  #lb.zoomed img{
+    max-width:none;max-height:none;width:210%;cursor:zoom-out;
   }
   #lb p{
-    color:#efe6d7;font-size:.86em;line-height:1.65;text-align:center;
-    margin:14px 0 0;max-width:520px;
+    color:#efe6d7;font-size:.84em;line-height:1.6;text-align:center;
+    margin:12px auto 0;max-width:520px;flex:none;
   }
   #lb button{
     position:fixed;top:14px;right:14px;
@@ -420,7 +429,7 @@
 
 <div id="lb" role="dialog" aria-modal="true" aria-label="课件大图">
   <button id="lb-close" aria-label="关闭大图">关闭</button>
-  <img id="lb-img" src="" alt="">
+  <div id="lb-scroll"><img id="lb-img" src="" alt=""></div>
   <p id="lb-cap"></p>
 </div>
 
@@ -460,18 +469,24 @@
       history.replaceState(null,'',a.getAttribute('href'));
     });
   });
-  // 点击课件图放大
+  // 点击课件图放大（支持二次放大到210%并拖动）
   var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img'), lbCap=document.getElementById('lb-cap');
   document.querySelectorAll('figure.slide img').forEach(function(img){
     img.addEventListener('click',function(){
       lbImg.src=img.src;
       lbImg.alt=img.alt;
       var cap=img.parentNode.querySelector('figcaption');
-      lbCap.textContent=cap?cap.textContent:'';
+      lbCap.textContent=(cap?cap.textContent:'')+' · 点画面放大，再点一下还原';
       lb.classList.add('open');
+      lb.classList.remove('zoomed');
     });
   });
-  function closeLb(){ lb.classList.remove('open'); }
+  lbImg.addEventListener('click',function(e){
+    e.stopPropagation();
+    lb.classList.toggle('zoomed');
+  });
+  document.getElementById('lb-scroll').addEventListener('click',function(e){ e.stopPropagation(); });
+  function closeLb(){ lb.classList.remove('open','zoomed'); }
   document.getElementById('lb-close').onclick=closeLb;
   lb.addEventListener('click',closeLb);
 })();
